@@ -9,8 +9,13 @@ import (
 	"strings"
 	"time"
 
+<<<<<<< HEAD
 	"github.com/google/go-github/v53/github"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/logging"
+=======
+	"github.com/google/go-github/v54/github"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/logging"
+>>>>>>> origin/main
 	"github.com/shurcooL/githubv4"
 	"golang.org/x/oauth2"
 )

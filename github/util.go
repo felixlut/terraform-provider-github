@@ -12,10 +12,15 @@ import (
 	"strconv"
 	"strings"
 
+<<<<<<< HEAD
 	"github.com/google/go-github/v53/github"
 	"github.com/hashicorp/go-cty/cty"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+=======
+	"github.com/google/go-github/v54/github"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+>>>>>>> origin/main
 )
 
 const (

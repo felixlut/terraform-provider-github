@@ -5,9 +5,15 @@ import (
 	"errors"
 	"log"
 
+<<<<<<< HEAD
 	"github.com/google/go-github/v53/github"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
+=======
+	"github.com/google/go-github/v54/github"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/validation"
+>>>>>>> origin/main
 )
 
 func resourceGithubActionsRepositoryPermissions() *schema.Resource {

@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/google/go-github/v53/github"
+	"github.com/google/go-github/v54/github"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
@@ -107,6 +107,10 @@ func dataSourceGithubRepository() *schema.Resource {
 				Computed: true,
 			},
 			"default_branch": {
+				Type:     schema.TypeString,
+				Computed: true,
+			},
+			"primary_language": {
 				Type:     schema.TypeString,
 				Computed: true,
 			},
@@ -250,6 +254,7 @@ func dataSourceGithubRepositoryRead(d *schema.ResourceData, meta interface{}) er
 
 	d.SetId(repoName)
 
+<<<<<<< HEAD
 	err = d.Set("name", repo.GetName())
 	if err != nil {
 		return err
@@ -370,6 +375,39 @@ func dataSourceGithubRepositoryRead(d *schema.ResourceData, meta interface{}) er
 	if err != nil {
 		return err
 	}
+=======
+	d.Set("name", repo.GetName())
+	d.Set("description", repo.GetDescription())
+	d.Set("homepage_url", repo.GetHomepage())
+	d.Set("private", repo.GetPrivate())
+	d.Set("visibility", repo.GetVisibility())
+	d.Set("has_issues", repo.GetHasIssues())
+	d.Set("has_discussions", repo.GetHasDiscussions())
+	d.Set("has_wiki", repo.GetHasWiki())
+	d.Set("is_template", repo.GetIsTemplate())
+	d.Set("fork", repo.GetFork())
+	d.Set("allow_merge_commit", repo.GetAllowMergeCommit())
+	d.Set("allow_squash_merge", repo.GetAllowSquashMerge())
+	d.Set("allow_rebase_merge", repo.GetAllowRebaseMerge())
+	d.Set("allow_auto_merge", repo.GetAllowAutoMerge())
+	d.Set("squash_merge_commit_title", repo.GetSquashMergeCommitTitle())
+	d.Set("squash_merge_commit_message", repo.GetSquashMergeCommitMessage())
+	d.Set("merge_commit_title", repo.GetMergeCommitTitle())
+	d.Set("merge_commit_message", repo.GetMergeCommitMessage())
+	d.Set("has_downloads", repo.GetHasDownloads())
+	d.Set("full_name", repo.GetFullName())
+	d.Set("default_branch", repo.GetDefaultBranch())
+	d.Set("primary_language", repo.GetLanguage())
+	d.Set("html_url", repo.GetHTMLURL())
+	d.Set("ssh_clone_url", repo.GetSSHURL())
+	d.Set("svn_url", repo.GetSVNURL())
+	d.Set("git_clone_url", repo.GetGitURL())
+	d.Set("http_clone_url", repo.GetCloneURL())
+	d.Set("archived", repo.GetArchived())
+	d.Set("node_id", repo.GetNodeID())
+	d.Set("repo_id", repo.GetID())
+	d.Set("has_projects", repo.GetHasProjects())
+>>>>>>> origin/main
 
 	if repo.GetHasPages() {
 		pages, _, err := client.Repositories.GetPagesInfo(context.TODO(), owner, repoName)
