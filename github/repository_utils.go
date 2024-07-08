@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/google/go-github/v57/github"
+	"github.com/google/go-github/v62/github"
 )
 
 // checkRepositoryBranchExists tests if a branch exists in a repository.
@@ -98,7 +98,7 @@ func getAutolinkByKeyPrefix(client *github.Client, owner, repo, keyPrefix string
 		}
 	}
 
-	return nil, nil
+	return nil, fmt.Errorf("cannot find autolink reference %s in repo %s/%s", keyPrefix, owner, repo)
 }
 
 // listAutolinks returns all autolink references for the given repository.
