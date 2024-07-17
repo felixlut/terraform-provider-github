@@ -13,6 +13,7 @@ depaware.txt        linguist-generated linguist-vendored merge=union
 vendor/*            linguist-vendored
 rules.mk            linguist-vendored
 */vendor/*          linguist-vendored
+*/vendor/*          linguist-generated
 
 # doc
 docs/*              linguist-documentation
