@@ -99,8 +99,6 @@ type RepositoryPermissionLevel struct {
 	Permission *string `json:"permission,omitempty"`
 
 	User *User `json:"user,omitempty"`
-
-	RoleName *string `json:"role_name,omitempty"`
 }
 
 // GetPermissionLevel retrieves the specific permission level a collaborator has for a given repository.
